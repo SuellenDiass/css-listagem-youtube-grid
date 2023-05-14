@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">Seja redirecionado à página do 
-<a href=" " target="_blank">projeto</a></p>
+<a href="https://css-listagem-youtube-grid.suellensouza.repl.co/" target="_blank">projeto</a></p>
 
 <p align="center">
     <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/> 
