@@ -55,6 +55,6 @@ Esqueci de criar o reset.css que é uma boa prática para garantir consistência
 ###
 
 
-## Curso Formação Front-end administrado pela Dio.me
+## Curso Formação Front-end Web Developer administrado pela Dio.me com a tutora Michele Ambrosio/Desenvolvedora Front-End
 
  [DIO](https://www.dio.me/).
