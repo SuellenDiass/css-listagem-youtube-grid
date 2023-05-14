@@ -1,0 +1,244 @@
+/* Estilizando */
+
+body{
+    display: grid;
+    grid-template-areas: 
+    "header header header header header" /* referente as colunas */
+    "aside main main main main"
+    "aside main main main main";
+    /* grid-gap: 1rem;  *//* espaçamento entre colunas e linhas */
+    grid-template-columns: auto auto auto auto auto; /* dizendo cada tamanho colunas */
+    grid-template-rows: auto 100vh auto auto auto; /*  dizendo cada tamanho linhas */
+    box-sizing: border-box;
+}
+
+/* dizer aos elementos onde eles devem ficar */
+
+#header{
+    grid-area: header;
+    display: grid;
+      /* grid-template-columns: auto 1fr auto; */
+      /* align-items: center; */
+     /*  padding: 10px; */ 
+ 
+}
+.menu__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-youtube-left{
+    flex: 1;
+    /* padding: 15px 65px;
+    cursor: pointer; */
+}
+/* estilizando input */
+.pesquisar__input{
+    width: 260px;
+    height: 32px;
+    border: 1px solid rgb(211, 211, 211);
+    font-size: 16px;
+    padding: 3px 8px;
+}
+/* esilizando icone pesqueisar */
+.pesquisar__label{
+    background-image: url(/image/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid rgb(211, 211, 211);
+    background-color: #F9F9F9;
+    border-left: none;
+    padding: 6px 18px 7px;
+    cursor: pointer;
+    justify-items: center;
+    
+}
+.pesquisar_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 auto;
+    /* display: none; *//*ocultar esse campo para telas menores,verificar @media abaixo**/
+}
+.pesquisar__input {
+    width: 100%;
+    
+  }
+
+.cabecalho__icones__item {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+.cabecalho__videos{
+    background-image: url(/image/film.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    
+}
+.cabecalho__notificacoes{
+    background-image: url(/image/bell.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 13px 30px 13px 13px;
+    
+}
+.cabecalho__avatar{
+    background-image: url(/image/Channel\ Avatar.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 13px 30px 13px 13px;
+}
+.menu_aside{
+    grid-area: aside;
+    
+}
+
+ul > li{
+    list-style: none;
+}
+/* pseudo classe:nth-child(n) corresponde a todos os elementos filhos. Estiiza todos os icones*/
+.menu__items li:nth-child(n)
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+
+    width: 75px;
+    
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    
+    
+}
+/* fixando o menu em tela */
+
+.menu__container {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 9999;
+  }
+
+  /* fixando o menu em tela */
+
+  .menu_aside {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 157px;
+    height: 100%;
+    z-index: 9999;
+  }
+.main_container{
+    grid-area: main;
+}
+.main_container{
+    
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 150px; /* vai afastar do menu_aside */
+    /* margin-right: 150px; */
+
+}
+
+ .videos__container {
+    max-width: 1200px; /* valor ajustável */
+    margin: 0 auto;
+    padding: 1px 20px 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+    
+} 
+
+/* a propriedade calc() para definir a largura dos vídeos como 1/3 da largura total do container, subtraindo o valor da margem entre eles. Isso garante que os vídeos fiquem em três colunas sem ultrapassar o limite do container principal. */
+
+.videos__item {
+    height: 303px;
+    width: calc((100% / 3) - 10px); /* valor ajustável */
+    margin-bottom: 20px; /* valor ajustável */
+}
+/* Efeito ao clicar nos videos */
+.videos__item:hover {
+    transform: scale(0.9);/* define tamanho do elemento ao tocar na tela */
+    z-index: 2;
+    transition: .5s;
+}
+/* OBSERVAÇÃO: DEVIDO AO USO DA PSEUDO CLASSE :nth-child() NO ASIDE AS PROPRIEDADES DEFINIDAS EM .descricao-video entraram em conflito por isso comentei. */
+
+/* .descricao-video{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* padding: 0px; */
+   /*  gap: 10px;
+
+    width: 249px;
+    height: 74px; */
+
+    /* Inside auto layout */
+
+    /* flex: none;
+    order: 1;
+    flex-grow: 0;
+} */ 
+
+/* Observações: considerar a largura total ocupada pelos vídeos e pela margem entre eles. Você pode definir a largura total dos vídeos como 100% do container e aplicar a margem como um valor em pixels. Isso garantirá que os vídeos fiquem alinhados corretamente e que não ultrapassem a largura do container principal.
+
+ */
+
+ /* tela pequena */
+ @media only screen 
+   and (min-width : 320px) {
+   /* Styles here */
+}
+/* tablet */
+
+@media screen and (max-width: 600px) {
+    .pesquisar_center {
+      display: none; /* ocultar o elemento em telas menores */
+    }
+    .main_container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    
+  }
+@media only screen 
+   and (min-width : 768px) {
+   /* Styles here */
+}
+/* laptop */
+@media only screen 
+   and (min-width : 1200px) {
+   /* Styles here */
+}
+@media screen and (max-width: 768px) { /* define a largura máxima para telas menores */
+    .videos-container {
+      display: flex;
+      flex-direction: column; /* muda a direção do layout para vertical */
+      justify-content: space-between;
+    }
+    
+    .video {
+      width: 100%; /* define a largura dos vídeos para 100% do container pai */
+    }
+  }
